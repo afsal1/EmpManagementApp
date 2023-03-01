@@ -1,0 +1,52 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup page</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+  </head>
+<body>
+  <div class="col-lg-4" ></div>
+    <div class="col-lg-4" >
+      <form method="POST" class="login-form" style="background-color: #ffffff;">
+        <h1 style="text-align: center;"><span>Signup</span></h1>
+
+        <div>
+          <label for="first_name"><b>First Name</b></label>
+          <input type="text" placeholder="first name" name="first_name" style="width: 100%;" required [(ngModel)]="signupObj.first_name" />  
+
+          <label for="last_name"><b>Last Name</b></label>
+          <input type="text" placeholder="last name" name="last_name" style="width: 100%;" required [(ngModel)]="signupObj.last_name" />
+
+          <label for="email"><b>Email</b></label>
+          <input type="email" placeholder="Email" name="email" style="width: 100%;" required [(ngModel)]="signupObj.email" />
+          
+          <label for="user_role" ><b>User Role</b></label><br>
+          <select name="user_role" id="user_role" [(ngModel)]="signupObj.user_role" >
+            <option disabled selected value="">-- Select an option --</option>
+            <option value="User">User</option>
+            <option value="Admin">Admin</option>
+          </select><br>
+          
+        <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Password" name="password" required [(ngModel)]="signupObj.password"/>
+
+          <div>
+            <button (click)="onSignup()" class="btn btn-secondary" style="width: auto;">Signup</button>
+            <span class="psw"> <a routerLink="">Already have an account..?</a> 
+              
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-4" ></div>
+  </body>
+</html>

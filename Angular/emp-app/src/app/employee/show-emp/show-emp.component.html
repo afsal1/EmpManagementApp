@@ -1,0 +1,56 @@
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Employee</h1>
+          <button type="button" class="btn-close" 
+          data-bs-dismiss="modal" aria-label="Close"
+          (click)="closeClick()"></button>
+        </div>
+        <div class="modal-body">
+          <app-edit-emp [emp]="emp" *ngIf="ActivateEditEmpComp"></app-edit-emp>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div style="padding-left: 80em; padding-top: 10px;">
+<button class="btn btn-outline-danger" (click)="logoutUser()">Logout</button>
+</div>
+<div style="padding-left: 15px; padding-right: 15px;">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Emp Code</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of EmployeeList">
+            
+            <td>{{dataItem.id}}</td>
+            <td>{{dataItem.first_name}}</td>
+            <td>{{dataItem.last_name}}</td>
+            <td>{{dataItem.email}}</td>
+            <td>{{dataItem.emp_code}}</td>
+            <td>
+                <button type="button" class="btn btn-light mr-1"
+                data-bs-toggle="modal" data-bs-target="#exampleModal"
+                (click)="editClick(dataItem)"
+                data-backdrop="static" data-keyboard="false"
+                >Edit</button>
+                <button type="button" class="btn btn-light mr-1"
+                (click)="deleteClick(dataItem)" >Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

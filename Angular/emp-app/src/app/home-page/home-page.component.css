@@ -1,0 +1,21 @@
+body {
+    padding-top: 10px;
+    font-family: Arial, sans-serif;
+    
+  }
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 36px;
+    color: #333;
+  }
+  p {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin-top: 20px;
+  }
+  button{
+    margin-left: 90em;
+   
+  }
